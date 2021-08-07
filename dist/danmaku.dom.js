@@ -42,13 +42,13 @@
     return node;
   }
 
-  function init() {
+  function init$1() {
     var stage = document.createElement('div');
     stage.style.cssText = 'overflow:hidden;white-space:nowrap;transform:translateZ(0);';
     return stage;
   }
 
-  function clear(stage) {
+  function clear$1(stage) {
     var lc = stage.lastChild;
     while (lc) {
       stage.removeChild(lc);
@@ -56,7 +56,7 @@
     }
   }
 
-  function resize(stage) {
+  function resize$1(stage) {
     stage.style.width = stage.width + 'px';
     stage.style.height = stage.height + 'px';
   }
@@ -99,9 +99,9 @@
 
   var domEngine = {
     name: 'dom',
-    init: init,
-    clear: clear,
-    resize: resize,
+    init: init$1,
+    clear: clear$1,
+    resize: resize$1,
     framing: framing,
     setup: setup,
     render: render,
@@ -337,6 +337,9 @@
     this.media.addEventListener('playing', _.play);
     this.media.addEventListener('waiting', _.pause);
     this.media.addEventListener('seeking', _.seeking);
+    this.media.addEventListener('btnPause', ()=>{
+      alert('hhh');
+    });
   }
 
   /* eslint no-invalid-this: 0 */
@@ -352,7 +355,7 @@
   }
 
   /* eslint-disable no-invalid-this */
-  function init$1(opt) {
+  function init(opt) {
     this._ = {};
     this.container = opt.container || document.createElement('div');
     this.media = opt.media;
@@ -483,14 +486,14 @@
   }
 
   /* eslint-disable no-invalid-this */
-  function clear$1() {
+  function clear() {
     this._.engine.clear(this._.stage, this._.runningList);
     this._.runningList = [];
     return this;
   }
 
   /* eslint-disable no-invalid-this */
-  function resize$1() {
+  function resize() {
     this._.stage.width = this.container.offsetWidth;
     this._.stage.height = this.container.offsetHeight;
     this._.engine.resize(this._.stage);
@@ -518,7 +521,7 @@
   };
 
   function Danmaku(opt) {
-    opt && init$1.call(this, opt);
+    opt && init.call(this, opt);
   }
   Danmaku.prototype.destroy = function() {
     return destroy.call(this);
@@ -533,10 +536,10 @@
     return hide.call(this);
   };
   Danmaku.prototype.clear = function() {
-    return clear$1.call(this);
+    return clear.call(this);
   };
   Danmaku.prototype.resize = function() {
-    return resize$1.call(this);
+    return resize.call(this);
   };
   Object.defineProperty(Danmaku.prototype, 'speed', speed);
 

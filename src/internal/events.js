@@ -12,6 +12,9 @@ export function bindEvents(_) {
   this.media.addEventListener('playing', _.play);
   this.media.addEventListener('waiting', _.pause);
   this.media.addEventListener('seeking', _.seeking);
+  this.media.addEventListener('btnPause', ()=>{
+    alert('hhh');
+  });
 }
 
 /* eslint no-invalid-this: 0 */
