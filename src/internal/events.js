@@ -1,7 +1,7 @@
 import play from './play.js';
 import pause from './pause.js';
 import seek from './seek.js';
-
+/* eslint-disable */
 /* eslint no-invalid-this: 0 */
 export function bindEvents(_) {
   _.play = play.bind(this);
@@ -13,12 +13,9 @@ export function bindEvents(_) {
   this.media.addEventListener('playing', _.play);
   this.media.addEventListener('waiting', _.pause);
   this.media.addEventListener('seeking', _.seeking);
-  // eslint-disable-next-line no-console
   console.log('start bind');
   this.media.addEventListener(btnPause, 'click', function() {
-    // eslint-disable-next-line no-alert
     alert('hhh');
-    /* eslint no-console: ["error", { allow: ["warn", "error"] }] */
     console.error('click btn');
   });
 }
