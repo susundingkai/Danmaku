@@ -326,12 +326,13 @@ function bindEvents(_) {
   _.play = play.bind(this);
   _.pause = pause.bind(this);
   _.seeking = seek.bind(this);
+  var btnPause = this.media.querySelector('.videoOsd-btnPause');
   this.media.addEventListener('play', _.play);
   this.media.addEventListener('pause', _.pause);
   this.media.addEventListener('playing', _.play);
   this.media.addEventListener('waiting', _.pause);
   this.media.addEventListener('seeking', _.seeking);
-  this.media.addEventListener('btnPause', ()=>{
+  this.media.addEventListener(btnPause, 'click', ()=>{
     // eslint-disable-next-line no-alert
     alert('hhh');
   });
