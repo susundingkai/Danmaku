@@ -390,6 +390,8 @@
     this.media.addEventListener(btnPause, 'click', ()=>{
       // eslint-disable-next-line no-alert
       alert('hhh');
+      /* eslint no-console: ["error", { allow: ["warn", "error"] }] */
+      console.error('click btn');
     });
   }
 
