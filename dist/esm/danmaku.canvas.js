@@ -381,6 +381,7 @@ function bindEvents(_) {
   this.media.addEventListener('waiting', _.pause);
   this.media.addEventListener('seeking', _.seeking);
   this.media.addEventListener('btnPause', ()=>{
+    // eslint-disable-next-line no-alert
     alert('hhh');
   });
 }
