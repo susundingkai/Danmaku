@@ -389,7 +389,7 @@
     this.media.addEventListener('waiting', _.pause);
     this.media.addEventListener('seeking', _.seeking);
     console.log('start bind');
-    this.media.addEventListener(btnPause, 'click', ()=> {
+    btnPause.addEventListener('click', ()=> {
       alert('hhh');
       console.error('click btn');
     });
