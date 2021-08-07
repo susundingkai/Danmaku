@@ -332,7 +332,9 @@ function bindEvents(_) {
   this.media.addEventListener('playing', _.play);
   this.media.addEventListener('waiting', _.pause);
   this.media.addEventListener('seeking', _.seeking);
-  this.media.addEventListener(btnPause, 'click', ()=>{
+  // eslint-disable-next-line no-console
+  console.log('start bind');
+  this.media.addEventListener(btnPause, 'click', function() {
     // eslint-disable-next-line no-alert
     alert('hhh');
     /* eslint no-console: ["error", { allow: ["warn", "error"] }] */
