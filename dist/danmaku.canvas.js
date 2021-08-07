@@ -382,17 +382,15 @@
     _.play = play.bind(this);
     _.pause = pause.bind(this);
     _.seeking = seek.bind(this);
-    var btnPause = this.media.querySelector('.videoOsd-btnPause');
+    //var btnPause = this.media.querySelector('.videoOsd-btnPause');
     this.media.addEventListener('play', _.play);
     this.media.addEventListener('pause', _.pause);
     this.media.addEventListener('playing', _.play);
     this.media.addEventListener('waiting', _.pause);
     this.media.addEventListener('seeking', _.seeking);
-    console.log('start bind');
-    btnPause.addEventListener('click', ()=> {
-      alert('hhh');
-      console.error('click btn');
-    });
+    //console.log('start bind');
+    //btnPause.addEventListener('click', _.play);
+    //btnPause.addEventListener('click', _.pause);
   }
 
   /* eslint no-invalid-this: 0 */
